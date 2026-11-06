@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>IELTS UNLOCKED</title>
+<style>
+:root{--bg:#EEF1F7;--card:#fff;--ink:#1E2340;--mut:#6B7194;--line:#E1E5F0;--ind:#5B6CE0;--teal:#2FB59B;--amb:#F2B544;--cor:#EE7B83;--sky:#5BB4E8;--indS:#E6E9FB;--tealS:#DDF4EE;--ambS:#FDF1D8;--corS:#FCE4E6;--skyS:#DFF1FC}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12142A;--card:#1D2040;--ink:#EEF0FF;--mut:#9CA2CC;--line:#2C3060;--indS:#2B3170;--tealS:#17433F;--ambS:#4A3B1B;--corS:#4B2630;--skyS:#173A52}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);display:flex;flex-direction:column;align-items:center}
+.top{width:100%;max-width:420px;padding:14px 14px 6px}
+h1{font-size:18px;letter-spacing:.2px}
+.sub{font-size:12px;color:var(--mut);margin-top:2px}
+.steps{display:flex;gap:6px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:none}
+.steps button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--mut);border-radius:999px;padding:7px 12px;font:inherit;font-size:12px;cursor:pointer}
+.steps button.on{background:var(--ind);color:#fff;border-color:var(--ind)}
+.phone{width:100%;max-width:420px;flex:1;background:var(--card);border-radius:26px 26px 0 0;margin-top:8px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 -2px 24px rgba(40,50,120,.08);min-height:0}
+.scr{display:none;flex:1;overflow-y:auto;padding:18px 16px 20px}
+.scr.on{display:block}
+.row{display:flex;gap:10px;align-items:center}
+.sp{justify-content:space-between}
+.card{background:var(--bg);border-radius:16px;padding:14px;margin-top:12px}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:13px;font:inherit;font-weight:700;font-size:15px;color:#fff;background:var(--ind);cursor:pointer;margin-top:12px}
+.btn.t{background:var(--teal)}.btn.c{background:var(--cor)}.btn.o{background:var(--indS);color:var(--ind)}
+.btn:active{transform:scale(.98)}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px}
+.bar{height:10px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--sky));border-radius:9px;transition:width .6s}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.stat{border-radius:14px;padding:10px 6px;text-align:center}
+.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:var(--mut)}
+h2{font-size:20px}h3{font-size:15px}
+p.m{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.45}
+.short{background:linear-gradient(160deg,#2A2F6B,#4A55C4 60%,#3C9BCB);color:#fff;border-radius:22px;padding:22px 18px;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+.short .q{font-size:25px;font-weight:800;line-height:1.2}
+.bubble{background:var(--bg);border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:14px;line-height:1.45;max-width:88%}
+.bubble.me{background:var(--ind);color:#fff;border-radius:16px 4px 16px 16px;margin-left:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1.5px solid var(--ind);color:var(--ind);background:transparent;border-radius:12px;padding:9px 13px;font:inherit;font-size:14px;cursor:pointer}
+.chip.sel{background:var(--ind);color:#fff}
+textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px;font:inherit;font-size:14px;background:var(--card);color:var(--ink);margin-top:10px;resize:none}
+.timer{font-size:54px;font-weight:800;text-align:center;color:var(--cor);margin:10px 0}
+.boss{background:var(--corS);border-radius:18px;padding:16px;text-align:center}
+.lb{display:flex;align-items:center;gap:10px;padding:10px 8px;border-radius:12px;font-size:14px}
+.lb.me{background:var(--indS);font-weight:700}
+.lb .n{width:26px;text-align:center;font-weight:700;color:var(--mut)}
+.lb .xp{margin-left:auto;font-weight:700}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff}
+.tabs{display:flex;gap:6px;margin:12px 0 6px}
+.tabs button{flex:1;border:0;border-radius:10px;padding:8px;font:inherit;font-size:13px;background:var(--bg);color:var(--mut);cursor:pointer}
+.tabs button.on{background:var(--ind);color:#fff}
+.ach{background:linear-gradient(150deg,#3E4BB8,#5B6CE0 50%,#2FB59B);color:#fff;border-radius:22px;padding:26px 18px;text-align:center}
+.ach .big{font-size:30px;font-weight:800;line-height:1.1;margin:8px 0}
+.funnel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;margin-top:10px}
+.funnel span{padding:5px 9px;border-radius:999px;font-weight:700}
+.nav{display:flex;border-top:1px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card)}
+.nav button{flex:1;border:0;background:none;font:inherit;font-size:11px;color:var(--mut);padding:6px 0;cursor:pointer}
+.nav button.on{color:var(--ind);font-weight:700}
+.nav b{display:block;font-size:19px}
+.note{font-size:11px;color:var(--mut);margin-top:12px;line-height:1.4;text-align:center}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90%;text-align:center}
+#toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px;margin-top:8px;font:inherit;font-size:14px;cursor:pointer}
+.opt.ok{background:var(--tealS);border-color:var(--teal)}.opt.no{background:var(--corS);border-color:var(--cor)}
+.ctx{background:var(--skyS);border-radius:12px;padding:10px 12px;font-size:13px;margin-top:10px;line-height:1.45}
+.rk{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;color:#fff}
+input.tx{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:11px;font:inherit;font-size:15px;background:var(--card);color:var(--ink);margin-top:10px}
+.lad{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:13px}
+.fab{position:fixed;z-index:20;bottom:calc(84px + env(safe-area-inset-bottom,0px));right:max(14px,calc(50vw - 196px));width:56px;height:56px;border-radius:50%;border:3px solid var(--card);background:var(--ambS);font-size:30px;cursor:pointer;box-shadow:0 4px 14px rgba(40,50,120,.22);display:grid;place-items:center}
+.fab em{position:absolute;top:-6px;right:-8px;background:var(--amb);color:#3a2a00;font:700 11px/1 inherit;font-style:normal;border-radius:999px;padding:4px 6px}
+.sh{position:fixed;inset:0;z-index:30;background:rgba(20,24,60,.45);display:none;align-items:flex-end;justify-content:center}
+.sh.on{display:flex}
+.pan{background:var(--card);width:100%;max-width:420px;max-height:88%;overflow-y:auto;border-radius:24px 24px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom,0px))}
+.dogbox{position:relative;width:130px;height:120px;margin:6px auto;font-size:92px;line-height:120px;text-align:center;background:var(--ambS);border-radius:50%}
+.dogbox span{position:absolute;line-height:1}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.it{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:14px;padding:10px;font:inherit;font-size:13px;text-align:center;cursor:pointer}
+.it b{display:block;font-size:26px}
+.it.on{border-color:var(--teal);background:var(--tealS)}
+</style>
+</head><body>
+<div class="top"><h1>IELTS UNLOCKED</h1><div class="sub">Demo prototype · practice game, not official IELTS</div></div>
+<div class="phone">
+<section class="scr on" id="s0">
+  <div class="card" style="margin-top:0">
+    <div class="row sp"><div class="row"><div class="av" style="background:var(--ind);width:44px;height:44px;font-size:17px">A</div><div><b>Alex</b><div style="font-size:12px;color:var(--mut)">Intermediate</div></div></div><span class="rk" id="pRank"></span></div>
+    <div class="row sp" style="margin-top:12px;font-size:13px"><b id="lv"></b><span style="color:var(--mut)" id="xpB"></span></div>
+    <div class="bar"><i id="xpBar"></i></div>
+    <div class="row sp" style="margin-top:12px;font-size:12px;color:var(--mut)"><span id="rkTxt"></span></div>
+    <div class="bar"><i id="rkBar" style="background:linear-gradient(90deg,var(--amb),var(--cor))"></i></div>
+  </div>
+  <div class="stats">
+    <div class="stat" style="background:var(--ambS)"><b id="stk">0</b><span>🔥 Day streak</span></div>
+    <div class="stat" style="background:var(--tealS)"><b id="pos">#12</b><span>Leaderboard</span></div>
+    <div class="stat" style="background:var(--corS)"><b id="tot">0</b><span>XP total</span></div>
+  </div>
+  <div class="card" style="background:var(--tealS)"><span class="tag" style="background:var(--teal);color:#fff">🎯 DAILY QUEST</span><h3 style="margin-top:8px">7 mixed tasks</h3><p class="m" id="qSt">Vocabulary, grammar, reading, writing and speaking. +10 XP per task.</p><button class="btn t" onclick="go(1)">OPEN QUEST</button></div>
+  <div class="card" style="background:var(--corS)"><span class="tag" style="background:var(--cor);color:#fff">👹 BOSS FIGHT</span><h3 style="margin-top:8px">Speaking Monster</h3><p class="m">Harder tasks, a timer and 3 lives. Beat the boss for a bonus.</p><button class="btn c" onclick="go(2)">FACE THE BOSS</button></div>
+  <div class="card"><b>Ranking system</b><div id="ladder"></div></div>
+  <button class="note" style="display:block;margin:10px auto 0;background:none;border:0;text-decoration:underline;cursor:pointer;color:var(--mut)" onclick="resetDemo()">Reset demo</button>
+</section>
+<section class="scr" id="s1"><div id="qbox"></div></section>
+<section class="scr" id="s2"><div id="bbox"></div></section>
+<section class="scr" id="s3">
+  <h2>Leaderboard</h2><p class="m">Top 10 players of the week (demo data)</p>
+  <div class="tabs" id="lbtabs"><button class="on" data-t="p">Players</button><button data-t="u">Universities</button><button data-t="c">Cities</button></div>
+  <div id="lbbox"></div>
+  <div class="card" style="background:var(--ambS)"><b>🏆 Monthly Champion</b><p class="m">The player with the most XP at month end gets a special badge.</p></div>
+</section>
+<section class="scr" id="s4">
+  <div class="ach"><div style="font-size:42px">🔓</div><div class="big" id="cLvl"></div><div style="font-size:15px;opacity:.9" id="cInfo"></div></div>
+  <div class="row"><button class="btn" onclick="share('Instagram Stories')">Share to Stories</button><button class="btn o" onclick="share('Telegram')">Send to friends</button></div>
+  <div class="card" style="background:var(--indS)"><b>⚔️ CHALLENGE YOUR FRIEND</b><div class="bubble me" style="margin-top:10px" id="chMsg"></div><button class="btn" onclick="share('your friend')">Challenge a friend</button>
+  <p class="m">Both get <b>Referral XP</b> after the friend finishes a first quest. Anti-abuse: one account per Telegram ID, XP only after real activity.</p></div>
+  <p class="note">IELTS UNLOCKED is a practice game. It does not give official IELTS scores or guarantee a higher Band Score.</p>
+</section>
+<nav class="nav" id="nav">
+  <button data-g="0"><b>👤</b>Profile</button><button data-g="1"><b>🎯</b>Quest</button><button data-g="2"><b>👹</b>Boss</button><button data-g="3"><b>🏆</b>Ranks</button><button data-g="4"><b>📤</b>Share</button>
+</nav></div><button class="fab" id="fab" onclick="dogOpen(true)" aria-label="Open your dog">🐶</button>
+<div class="sh" id="sh" onclick="if(event.target===this)dogOpen(false)"><div class="pan">
+<div class="row sp"><h2 id="dName"></h2><button class="chip" onclick="dogOpen(false)">Close</button></div>
+<div class="dogbox">🐶<span id="wHat" style="top:-6px;left:50%;transform:translateX(-50%);font-size:44px"></span><span id="wFace" style="top:46px;left:50%;transform:translateX(-50%);font-size:40px"></span><span id="wNeck" style="bottom:-4px;left:50%;transform:translateX(-50%);font-size:36px"></span></div>
+<p class="m" id="dSay" style="text-align:center"></p>
+<div class="row sp" style="margin-top:10px;font-size:13px"><b>🪙 <span id="dCoins">0</span> coins</b><span style="color:var(--mut)">Happiness</span></div>
+<div class="bar"><i id="dHap" style="background:linear-gradient(90deg,var(--amb),var(--cor))"></i></div>
+<p class="m">Earn coins for correct answers in the Quest and Boss Fight.</p>
+<h3 style="margin-top:12px">Shop</h3><div class="grid" id="shop"></div>
+</div></div>
+<div id="toast"></div>
+<script>
+var RK=[["Bronze",0,"#C98B5B"],["Silver",500,"#8F9BB3"],["Gold",1000,"#E0A526"],["Platinum",2000,"#4FA9DE"],["Diamond",3500,"#5B6CE0"],["Legend",6000,"#EE7B83"]];
+var QUEST=[
+{t:"mc",tag:"Vocabulary",p:"Choose the synonym of “significant”.",o:["Important","Tiny","Slow","Rare"],a:0,e:"Significant means important or meaningful."},
+{t:"mc",tag:"Grammar",p:"If I ___ more time, I would travel more.",o:["have","had","will have","having"],a:1,e:"Second conditional: if + past simple, would + verb."},
+{t:"mc",tag:"Reading · T/F/NG",c:"Maria studies at university in the mornings and works in a café in the evenings.",p:"Maria works in the evening.",o:["True","False","Not Given"],a:0,e:"The text says she works in the evenings."},
+{t:"mc",tag:"Spelling",p:"Which spelling is correct?",o:["accomodation","acommodation","accommodation","accomodasion"],a:2,e:"Accommodation: double c, double m."},
+{t:"txt",tag:"Fill the gap",p:"She has lived here ___ 2019. (for / since)",a:["since"],e:"Use since with a point in time."},
+{t:"mc",tag:"Collocation",p:"Complete: “___ a decision”.",o:["do","make","take part","give up"],a:1,e:"We say make a decision."},
+{t:"say",tag:"Speaking",p:"Describe your hometown: where it is, what it is famous for, and what you like most.",min:15,e:"Great, you spoke in full sentences."}];
+var BOSS=[
+{t:"mc",tag:"Meaning",p:"“The findings were inconclusive.” What does it mean?",o:["They proved the theory","They gave no clear answer","They were surprising","They were published late"],a:1,e:"Inconclusive means not leading to a clear result."},
+{t:"mc",tag:"Grammar",p:"Neither the manager nor the employees ___ aware of the change.",o:["is","was","were","been"],a:2,e:"The verb agrees with the nearer subject: employees → were."},
+{t:"mc",tag:"Paraphrase",p:"“The number of cars has doubled.” Choose the best paraphrase.",o:["Car numbers have fallen by half","There has been a twofold rise in car numbers","Cars are twice as expensive","Fewer people own cars"],a:1,e:"Doubled = twofold rise."},
+{t:"mc",tag:"Collocation",p:"Governments should ___ stricter laws to reduce pollution.",o:["do","perform","introduce","draw"],a:2,e:"We introduce laws."},
+{t:"mc",tag:"Inversion",p:"Rarely ___ such a talented speaker.",o:["I see","do I see","have I seen","I have seen"],a:2,e:"After a negative adverb: inversion, so have I seen."},
+{t:"txt",tag:"Word form",p:"The company’s ___ (grow) has been rapid this year.",a:["growth"],e:"Noun form of grow: growth."},
+{t:"say",tag:"Speaking Monster · 45 sec",p:"Describe a person who inspired you. Explain why. Keep going!",min:25,time:45,e:"The monster is defeated by fluent speech."}];
+var xp=250,streak=0,qDone=false,bDone=false,S=null,tt=null,prevRank=0;
+function rk(x){var r=0;RK.forEach(function(k,i){if(x>=k[1])r=i});return r}
+function go(i){
+  clearInterval(tt);tt=null;
+  document.querySelectorAll('.scr').forEach(function(s,k){s.classList.toggle('on',k===i)});
+  document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('on',+b.dataset.g===i)});
+  if(i===1)qIntro();if(i===2)bIntro();if(i===3)renderLb();upd();
+}
+document.querySelectorAll('#nav button').forEach(function(b){b.onclick=function(){go(+b.dataset.g)}});
+function toast(t){var e=document.getElementById('toast');e.textContent=t;e.classList.add('on');setTimeout(function(){e.classList.remove('on')},2400)}
+function badge(i){return '<span class="rk" style="background:'+RK[i][2]+'">'+RK[i][0]+'</span>'}
+var P=[["Aigerim K.",1380,"#5B6CE0"],["Daniyar S.",1210,"#2FB59B"],["Madina T.",1105,"#F2B544"],["Timur B.",990,"#EE7B83"],["Dana R.",880,"#5BB4E8"],["Arman Zh.",760,"#2FB59B"],["Aliya M.",705,"#F2B544"],["Nurlan A.",640,"#EE7B83"],["Samal O.",590,"#5BB4E8"],["Ruslan E.",540,"#5B6CE0"],["Zarina N.",470,"#2FB59B"]];
+function board(){var a=P.map(function(r){return r.slice()});a.push(["Alex (you)",xp,"#5B6CE0"]);a.sort(function(x,y){return y[1]-x[1]});return a}
+function upd(){
+  var r=rk(xp),L=Math.floor(xp/100)+1,nx=RK[r+1];
+  document.getElementById('pRank').outerHTML='<span class="rk" id="pRank" style="background:'+RK[r][2]+'">'+RK[r][0]+'</span>';
+  document.getElementById('lv').textContent='LEVEL '+String(L).padStart(2,'0')+' · '+xp+' XP';
+  document.getElementById('xpB').textContent=(100-xp%100)+' XP to next level';
+  document.getElementById('xpBar').style.width=(xp%100)+'%';
+  document.getElementById('rkTxt').textContent=nx?(nx[1]-xp)+' XP to '+nx[0]:'Top rank reached';
+  document.getElementById('rkBar').style.width=nx?((xp-RK[r][1])/(nx[1]-RK[r][1])*100)+'%':'100%';
+  document.getElementById('stk').textContent=streak;document.getElementById('tot').textContent=xp;
+  document.getElementById('pos').textContent='#'+(board().findIndex(function(x){return x[0].indexOf('you')>-1})+1);
+  document.getElementById('ladder').innerHTML=RK.map(function(k,i){return '<div class="lad"><span>'+badge(i)+'</span><span style="color:var(--mut)">'+k[1]+'+ XP'+(i===r?' · you are here':'')+'</span></div>'}).join('');
+  document.getElementById('qSt').textContent=qDone?'Completed today ✓ Come back tomorrow.':'Vocabulary, grammar, reading, writing and speaking. +10 XP per task.';
+  document.getElementById('cLvl').innerHTML='LEVEL '+L+'<br>UNLOCKED!';
+  document.getElementById('cInfo').textContent=xp+' XP · '+RK[r][0]+' · Alex';
+  document.getElementById('chMsg').textContent='I have '+xp+' XP and rank '+RK[r][0]+' in IELTS UNLOCKED. Can you beat me?';
+  if(r>prevRank)toast('New rank: '+RK[r][0]+'! 🎉');prevRank=r;
+}
+function addXp(n){xp+=n;upd()}
+function intro(id,m){
+  var q=m==='q';
+  document.getElementById(id).innerHTML=q?
+  (qDone?'<div class="card" style="background:var(--tealS)"><b>Daily Quest completed ✓</b><p class="m">New tasks arrive tomorrow. Meanwhile, face the Boss.</p><button class="btn c" onclick="go(2)">Face the Boss</button></div>':
+  '<span class="tag" style="background:var(--tealS);color:var(--teal)">🎯 DAILY QUEST</span><h2 style="margin-top:8px">7 tasks, +10 XP each</h2><p class="m">Vocabulary, grammar, reading, spelling, gap fill, collocation and a speaking task.</p><button class="btn t" onclick="run(\'q\')">START QUEST</button>'):
+  (bDone?'<div class="boss"><div style="font-size:50px">🏆</div><h2>Boss defeated today</h2><p class="m">Come back tomorrow for a new boss.</p></div>':
+  '<div class="boss"><div style="font-size:54px">👹</div><h2>Speaking Monster</h2><p class="m">7 hard tasks. 25 seconds each, the last one 45. You have 3 lives ❤️❤️❤️. Each right answer hurts the boss.</p><button class="btn c" onclick="run(\'b\')">START BOSS FIGHT</button></div>')
+}
+function qIntro(){intro('qbox','q')}function bIntro(){intro('bbox','b')}
+function run(m){S={m:m,L:m==='q'?QUEST:BOSS,i:0,ok:0,lives:3,lock:false,gain:0};show()}
+function show(){
+  clearInterval(tt);tt=null;
+  var q=S.L[S.i],b=S.m==='b',id=b?'bbox':'qbox',n=S.L.length,h='';
+  h+='<div class="row sp" style="font-size:12px;color:var(--mut)"><span>Task '+(S.i+1)+'/'+n+' · '+q.tag+'</span>'+(b?'<span id="tm" style="font-weight:700;color:var(--cor)"></span><span>'+'❤️'.repeat(S.lives)+'</span>':'<span>+'+S.gain+' XP</span>')+'</div>';
+  h+='<div class="bar"><i style="width:'+(b?(1-S.ok/n)*100:S.i/n*100)+'%;'+(b?'background:var(--cor)':'')+'"></i></div>';
+  if(b)h+='<p class="m">👹 Boss HP</p>';
+  if(q.c)h+='<div class="ctx">'+q.c+'</div>';
+  h+='<h3 style="margin-top:14px;line-height:1.4">'+q.p+'</h3>';
+  if(q.t==='mc')q.o.forEach(function(o,i){h+='<button class="opt" onclick="ans('+i+')">'+o+'</button>'});
+  if(q.t==='txt')h+='<input class="tx" id="inp" placeholder="Type your answer" autocomplete="off"><button class="btn '+(b?'c':'t')+'" onclick="ans(document.getElementById(\'inp\').value)">CHECK</button>';
+  if(q.t==='say')h+='<textarea id="inp" rows="5" placeholder="Type what you would say (in the real bot: a voice message). Min. '+q.min+' words."></textarea><button class="btn '+(b?'c':'t')+'" onclick="ans(document.getElementById(\'inp\').value)">SUBMIT</button>';
+  h+='<div id="fb"></div>';
+  document.getElementById(id).innerHTML=h;
+  if(b){var t=q.time||25,e=document.getElementById('tm');e.textContent='⏱ '+t;tt=setInterval(function(){t--;e.textContent='⏱ '+t;if(t<=0){clearInterval(tt);tt=null;var f=document.getElementById('inp');ans(q.t==='mc'?-1:(f?f.value:''))}},1000)}
+}
+function ans(v){
+  if(S.lock)return;var q=S.L[S.i],b=S.m==='b',ok;
+  if(q.t==='mc')ok=v===q.a;
+  else if(q.t==='txt'){v=String(v).trim().toLowerCase();if(!v){toast('Type an answer first');return}ok=q.a.indexOf(v)>-1}
+  else{var w=String(v).trim().split(/\s+/).filter(Boolean).length;if(w<q.min&&!tt&&!b){toast('Write at least '+q.min+' words');return}ok=w>=q.min}
+  S.lock=true;clearInterval(tt);tt=null;
+  if(q.t==='mc')document.querySelectorAll('.opt').forEach(function(o,i){o.disabled=true;if(i===q.a)o.classList.add('ok');else if(i===v)o.classList.add('no')});
+  var g=ok?(q.t==='say'?(b?40:20):(b?15:10)):0;
+  if(ok){S.ok++;S.gain+=g;addXp(g);coins+=coinOf(g);fabUpd()}else if(b)S.lives--;
+  var last=S.i===S.L.length-1,dead=b&&S.lives<=0;
+  document.getElementById('fb').innerHTML='<div class="card" style="background:'+(ok?'var(--tealS)':'var(--corS)')+'"><b>'+(ok?'Correct! +'+g+' XP · +'+coinOf(g)+' 🪙':(q.t==='say'?'Too short':'Not quite'))+'</b><p class="m">'+(ok?q.e:(q.t==='mc'?'Answer: '+q.o[q.a]+'. ':q.t==='txt'?'Answer: '+q.a[0]+'. ':'')+q.e)+'</p><button class="btn '+(b?'c':'t')+'" onclick="'+(last||dead?'fin('+dead+')':'S.i++;S.lock=false;show()')+'">'+(last||dead?'SEE RESULT':'NEXT')+'</button></div>';
+  document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function fin(dead){
+  var b=S.m==='b',id=b?'bbox':'qbox',win=b&&!dead&&S.ok>=5,bonus=0,h;
+  if(b){if(win)bonus=50;bDone=win||bDone;}else{qDone=true;if(!streak)streak=1}
+  if(bonus){addXp(bonus);coins+=20;fabUpd()}else upd();
+  h='<div class="card" style="text-align:center;background:'+(b&&!win?'var(--corS)':'var(--tealS)')+'"><div style="font-size:46px">'+(b?(win?'🏆':'💀'):'🎉')+'</div><h2>'+(b?(win?'Monster defeated!':'You were defeated'):'Quest complete!')+'</h2><p class="m">'+S.ok+' of '+S.L.length+' tasks correct · +'+(S.gain+bonus)+' XP'+(bonus?' (incl. +50 boss bonus)':'')+(b?'':' · 🔥 streak: day 1')+'</p></div>'+
+  (b&&!win?'<button class="btn c" onclick="run(\'b\')">TRY AGAIN</button>':'')+'<button class="btn o" onclick="go(3)">See leaderboard</button><button class="btn" onclick="go(4)">Share my result</button>';
+  document.getElementById(id).innerHTML=h;
+}
+var D={u:[["Nazarbayev University",18400,"#5B6CE0"],["KBTU",17150,"#2FB59B"],["Al-Farabi KazNU",16720,"#F2B544"],["SDU",15480,"#EE7B83"],["Satbayev University",14300,"#5BB4E8"]],c:[["Almaty",42100,"#EE7B83"],["Astana",39800,"#5B6CE0"],["Shymkent",31200,"#F2B544"],["Karaganda",22750,"#2FB59B"],["Aktobe",19600,"#5BB4E8"]]};
+var tab='p';
+document.querySelectorAll('#lbtabs button').forEach(function(b){b.onclick=function(){tab=b.dataset.t;document.querySelectorAll('#lbtabs button').forEach(function(x){x.classList.toggle('on',x===b)});renderLb()}});
+function row(r,i,me){var rr=rk(r[1]);return '<div class="lb'+(me?' me':'')+'"><span class="n">'+(i<3?['🥇','🥈','🥉'][i]:i+1)+'</span><span class="av" style="background:'+r[2]+'">'+r[0].charAt(0)+'</span><span>'+r[0]+(tab==='p'?' '+badge(rr):'')+'</span><span class="xp">'+r[1].toLocaleString('en-US')+' XP</span></div>'}
+function renderLb(){
+  var a=tab==='p'?board():D[tab],h='',my=-1;
+  a.forEach(function(r,i){if(r[0].indexOf('you')>-1)my=i});
+  a.slice(0,10).forEach(function(r,i){h+=row(r,i,i===my)});
+  if(my>9)h+='<div style="text-align:center;color:var(--mut)">···</div>'+row(a[my],my,true);
+  document.getElementById('lbbox').innerHTML=h;
+}
+var DOG_NAME='Bluvy';
+var coins=0,own={},worn={},hap=60;
+var SHOP=[{id:'bone',n:'Bone',e:'🦴',c:8,food:15},{id:'steak',n:'Tasty treat',e:'🍖',c:15,food:30},{id:'hat',n:'Top hat',e:'🎩',c:25,slot:'Hat'},{id:'crown',n:'Crown',e:'👑',c:60,slot:'Hat'},{id:'shades',n:'Sunglasses',e:'🕶️',c:30,slot:'Face'},{id:'scarf',n:'Scarf',e:'🧣',c:20,slot:'Neck'},{id:'bow',n:'Bow',e:'🎀',c:15,slot:'Neck'}];
+function coinOf(g){return Math.max(1,Math.round(g/5))}
+function fabUpd(){if(document.getElementById('sh').classList.contains('on'))dogR()}
+function dogOpen(o){document.getElementById('sh').classList.toggle('on',o);if(o)dogR()}
+function dogR(){
+  document.getElementById('dName').textContent=DOG_NAME+' the pup';
+  document.getElementById('dCoins').textContent=coins;document.getElementById('dHap').style.width=hap+'%';
+  ['Hat','Face','Neck'].forEach(function(s){document.getElementById('w'+s).textContent=worn[s]||''});
+  document.getElementById('dSay').textContent=hap>=80?'Woof! I’m so happy! 🐾':hap>=40?'Woof! Keep learning with me.':'I’m a bit hungry… 🥺';
+  document.getElementById('shop').innerHTML=SHOP.map(function(i){var o=own[i.id],on=o&&worn[i.slot]===i.e;
+    return '<button class="it'+(on?' on':'')+'" onclick="buy(\''+i.id+'\')"><b>'+i.e+'</b>'+i.n+'<br><span style="color:var(--mut)">'+(i.food?'+'+i.food+' happiness · ':'')+(o?(on?'Worn ✓':'Tap to wear'):'🪙 '+i.c)+'</span></button>'}).join('');
+}
+function buy(id){
+  var i=SHOP.filter(function(x){return x.id===id})[0];
+  if(i.slot&&own[id]){worn[i.slot]=worn[i.slot]===i.e?'':i.e;dogR();return}
+  if(coins<i.c){toast('Not enough coins. Answer more tasks correctly!');return}
+  coins-=i.c;
+  if(i.food){hap=Math.min(100,hap+i.food);toast('Yum! '+DOG_NAME+' loves it 🐾')}
+  else{own[id]=1;worn[i.slot]=i.e;toast('Bought: '+i.n+' ✨')}
+  fabUpd();dogR();
+}
+function share(w){
+  var msg=document.getElementById('chMsg').textContent+' t.me/IELTSUnlockedBot';
+  try{if(navigator.share&&w!=='Instagram Stories'){navigator.share({text:msg}).catch(function(){});return}}catch(e){}
+  try{navigator.clipboard.writeText(msg)}catch(e){}
+  toast('Demo: card sent to '+w+' ✓');
+}
+function resetDemo(){coins=0;own={};worn={};hap=60;fabUpd();xp=250;streak=0;qDone=false;bDone=false;prevRank=0;upd();toast('Demo reset')}
+go(0);
+</script></body></html>
